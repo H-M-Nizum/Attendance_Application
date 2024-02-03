@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+    <br><br><button class="btn btn-dark mb-3">{{data | length}} result found</button><br>
+    <h1>Students in class {{ class_name }}</h1>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Roll</th>
+        <th scope="col">FUllname</th>
+        <th scope="col">Fathername</th>
+        <th scope="col">Mothername</th>
+        <th scope="col">Age</th>
+        <th scope="col">Class</th>
+        <th scope="col">action</th>
+        <th scope="col">action1</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for object in students %}
+        <tr>
+          <th scope="row">{{object.roll}}</th>
+          <td>{{object.fullname}}</td>
+          <td>{{object.fatherName}}</td>
+          <td>{{object.motherName}}</td>
+          <td>{{object.age}}</td>
+          <td>{% for j in object.cl_name.all %}
+                  {{j}}
+              {% endfor %}</td>
+          <td><a href="{% url 'present' object.id %}">present</a></td>
+          <td><a href="{% url 'apsent' object.id %}">apsent</a></td>
+          
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

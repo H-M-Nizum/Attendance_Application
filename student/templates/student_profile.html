@@ -1,0 +1,51 @@
+
+
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ student.fullname }}{% endblock title %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+    <div class="card text-center">
+        <div class="card-header">
+            <p><strong>Name : </strong>{{ student.fullname }}</p>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Attendance History</h5>
+          
+          <p>Student ID: {{ student.id }}</p>
+          <p>Present Days: {{ present_days }}</p>
+          <p>Absent Days: {{ apsent_days }}</p>
+          <p>Present percentage: {{ parcentage }}  </p>
+          
+        </div> 
+      </div>
+    
+</div>
+
+
+{% endblock content %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ student.fullname }} Profile</title>
+</head>
+<body>
+    <h1>{{ student.fullname }}'s Profile</h1>
+    
+    <p>Student ID: {{ student.id }}</p>
+    <p>Present Days: {{ present_days }}</p>
+    <p>Present Days: {{ apsent_days }}</p>
+
+    <!-- Add more details from the student model as needed -->
+
+</body>
+</html>

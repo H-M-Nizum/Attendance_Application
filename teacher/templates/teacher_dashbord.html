@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Teacher Dashbord{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="m-auto">
+        <div class="d-flex gap-3">
+            <a href="{% url 'teacher_attendance' %}" class="text-decoration-none btn btn-primary" >Take Attendance</a>
+            <a href="{% url 'add_student' %}" class="text-decoration-none btn btn-primary" >Add Student</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

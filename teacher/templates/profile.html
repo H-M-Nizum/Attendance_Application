@@ -1,0 +1,56 @@
+
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}profile page{% endblock title %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+    <div class="card text-center">
+        <div class="card-header">
+            <p><strong>Name:</strong> {{ data.user.username }}</p>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Teacher Profile</h5>
+          <p><strong>Email:</strong> {{ data.user.email }}</p>
+            <p><strong>Subject:</strong> {{ data.subject }}</p>
+            <p><strong>Age:</strong> {{ data.age }}</p>
+            <p><strong>Join Date:</strong> {{ data.join_date }}</p>
+          
+          {% if data.admin_approve %}
+            <p><strong>Admin Approval:</strong> Approved</p>
+            <a class="btn btn-primary" href="{% url 'teacher_dashbord' %}">Attandance heare</a>
+                {% else %}
+            <p><strong>Admin Approval:</strong> Not Approved</p>
+        {% endif %}
+        </div>
+        <div class="card-footer text-body-secondary">
+          2 days ago
+        </div>
+      </div>
+    
+</div>
+
+<!-- 
+{% if data.admin_approve %}
+    <p><strong>Admin Approval:</strong> Approved</p>
+    <a class="btn btn-primary" href="{% url 'teacher_dashbord' %}">Attandance heare</a>
+{% else %}
+    <p><strong>Admin Approval:</strong> Not Approved</p>
+{% endif %}
+<h1>Teacher Profile</h1>
+<h1>{{data}}</h1>
+<p><strong>Name:</strong> {{ data.user.first_name }} {{ teacher.user.last_name }}</p>
+<p><strong>Username:</strong> {{ data.user.username }}</p>
+<p><strong>Email:</strong> {{ data.user.email }}</p>
+<p><strong>Subject:</strong> {{ data.subject }}</p>
+<p><strong>Age:</strong> {{ data.age }}</p>
+<p><strong>Join Date:</strong> {{ data.join_date }}</p> -->
+
+
+
+{% endblock content %}
