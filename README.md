@@ -17,3 +17,8 @@ Teacher take attendance. Teacher can add student in school. Studen see his/her a
 ### Student
 - student can see all student in the school
 - Sudent can her/his own attendance history.
+
+
+## Database model design
+
+![Untitled Diagram drawio (6)](https://github.com/H-M-Nizum/Attendance_Application/assets/106550437/b8d4d153-0dba-4d34-a20b-01817c08b721)
